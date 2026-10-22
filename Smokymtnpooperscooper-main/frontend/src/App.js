@@ -2,6 +2,8 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import Landing from "./pages/Landing";
+import Quote from "./pages/Quote";
+import Commercial from "./pages/Commercial";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Contacts from "./pages/Contacts";
@@ -11,16 +13,16 @@ import { Toaster } from "./components/ui/sonner";
 
 function AppRouter() {
   const location = useLocation();
-  
-  // CRITICAL: Check URL fragment synchronously during render (prevents race conditions)
-  // Use location.hash from useLocation (reactive), not window.location.hash (not reactive)
+
   if (location.hash?.includes('session_id=')) {
     return <AuthCallback />;
   }
-  
+
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
+      <Route path="/quote" element={<Quote />} />
+      <Route path="/commercial" element={<Commercial />} />
       <Route path="/login" element={<Login />} />
       <Route
         path="/dashboard"
