@@ -1,4 +1,4 @@
-name: Deploy Website
+name: Deploy Smoky Mountain Pooper Scoopers
 
 on:
   push:
@@ -41,7 +41,10 @@ jobs:
       - name: Build React website
         run: yarn build
         env:
-          PUBLIC_URL: https://www.smokymtnpooperscooper.com
+          PUBLIC_URL: https://smokymtnpooperscooper.com
+
+      - name: Verify build output
+        run: test -f build/index.html && test -f build/CNAME && echo "Build verified"
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
