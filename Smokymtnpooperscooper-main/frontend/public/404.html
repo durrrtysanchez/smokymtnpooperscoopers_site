@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      (function () {
+        var path = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+        var base = '/';
+        var target = base + '?p=' + encodeURIComponent(path + search) + (hash ? '&h=' + encodeURIComponent(hash) : '');
+        window.location.replace(target);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
