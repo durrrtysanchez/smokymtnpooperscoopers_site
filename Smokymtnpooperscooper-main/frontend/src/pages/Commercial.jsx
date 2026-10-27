@@ -66,6 +66,7 @@ const Commercial = () => (
 
     <footer className="bg-emerald-950 text-emerald-100 py-10"><div className="container mx-auto px-4 flex flex-col md:flex-row justify-between gap-5 items-center"><div><div className="font-black text-white">Smoky Mountain Pooper Scoopers</div><div className="text-sm mt-1">Commercial pet waste removal • Knoxville & East Tennessee</div></div><div className="flex gap-5 items-center"><a href="tel:865-343-1142" className="font-bold hover:text-white">865-343-1142</a><Link to="/quote" className="font-bold text-lime-300 hover:text-lime-200">Get a Quote</Link></div></div></footer>
   </div>
+  </>
 );
 
 export default Commercial;
