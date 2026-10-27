@@ -2,31 +2,57 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Check, Mail, MapPin, Phone, Send, Sparkles } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import SEO from '../components/SEO';
 
 const Quote = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(false);\n  const [submitting, setSubmitting] = useState(false);\n  const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     name: '', phone: '', email: '', address: '', propertyType: 'Residential', dogs: '1', frequency: 'Weekly', service: 'Recurring yard cleanup', message: ''
   });
 
   const handleChange = (event) => setFormData({ ...formData, [event.target.name]: event.target.value });
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const subject = encodeURIComponent(`Free Quote Request - ${formData.name}`);
-    const body = encodeURIComponent([
-      `Name: ${formData.name}`,
-      `Phone: ${formData.phone}`,
-      `Email: ${formData.email}`,
-      `Property address: ${formData.address}`,
-      `Property type: ${formData.propertyType}`,
-      `Dogs: ${formData.dogs}`,
-      `Frequency: ${formData.frequency}`,
-      `Service: ${formData.service}`,
-      `Notes: ${formData.message || 'None'}`
-    ].join('\n'));
-    window.location.href = `mailto:smokymtnpooperscoopers@protonmail.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/smokymtnpooperscoopers@protonmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          address: formData.address,
+          propertyType: formData.propertyType,
+          dogs: formData.dogs,
+          frequency: formData.frequency,
+          service: formData.service,
+          message: formData.message || 'None',
+          _subject: `New Pooper Scoopers Quote Request - ${formData.name}`,
+          _replyto: formData.email,
+          _template: 'table',
+          _url: window.location.href
+        })
+      });
+
+      if (!response.ok) throw new Error('The quote service returned an error.');
+
+      const result = await response.json();
+      if (result.success === false) throw new Error(result.message || 'The quote could not be submitted.');
+
+      setSubmitted(true);
+    } catch (submissionError) {
+      setError('We could not submit the quote right now. Please call 865-343-1142 or email smokymtnpooperscoopers@protonmail.com.');
+      console.error(submissionError);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -35,7 +61,7 @@ const Quote = () => {
         <div className="max-w-xl w-full bg-white rounded-3xl shadow-2xl p-8 md:p-12 text-center">
           <div className="mx-auto w-16 h-16 rounded-full bg-lime-100 flex items-center justify-center mb-6"><Check className="w-8 h-8 text-emerald-700" /></div>
           <h1 className="text-3xl md:text-4xl font-bold text-emerald-950">Your quote request is ready.</h1>
-          <p className="mt-4 text-emerald-700">Your email app should have opened with your quote information. Send it to us and we'll follow up.</p>
+          <p className="mt-4 text-emerald-700">Your quote request was submitted successfully. We will follow up using the contact information you provided.</p>
           <a href="tel:865-343-1142" className="inline-flex items-center mt-8 px-6 py-3 rounded-xl bg-emerald-700 text-white font-bold hover:bg-emerald-800"><Phone className="w-5 h-5 mr-2" /> Call 865-343-1142</a>
           <div className="mt-6"><Link to="/" className="text-emerald-700 font-semibold hover:underline">Return to home</Link></div>
         </div>
@@ -44,7 +70,7 @@ const Quote = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="min-h-screen bg-slate-50 text-slate-900">\n      <SEO title="Get a Free Pet Waste Removal Quote | Knoxville TN" description="Request a fast quote for residential or commercial pet waste removal in Knoxville and East Tennessee." path="/quote" />
       <header className="bg-white border-b border-emerald-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 font-bold text-emerald-950"><Sparkles className="w-7 h-7 text-emerald-700" /> Smoky Mountain Pooper Scoopers</Link>
