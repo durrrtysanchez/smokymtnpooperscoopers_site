@@ -156,6 +156,7 @@ const Landing = () => (
       </div>
     </footer>
   </div>
-  </>\n);
+  </>
+);
 
 export default Landing;
