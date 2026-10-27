@@ -5,7 +5,9 @@ import { Button } from '../components/ui/button';
 import SEO from '../components/SEO';
 
 const Quote = () => {
-  const [submitted, setSubmitted] = useState(false);\n  const [submitting, setSubmitting] = useState(false);\n  const [error, setError] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     name: '', phone: '', email: '', address: '', propertyType: 'Residential', dogs: '1', frequency: 'Weekly', service: 'Recurring yard cleanup', message: ''
   });
@@ -70,7 +72,8 @@ const Quote = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">\n      <SEO title="Get a Free Pet Waste Removal Quote | Knoxville TN" description="Request a fast quote for residential or commercial pet waste removal in Knoxville and East Tennessee." path="/quote" />
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      <SEO title="Get a Free Pet Waste Removal Quote | Knoxville TN" description="Request a fast quote for residential or commercial pet waste removal in Knoxville and East Tennessee." path="/quote" />
       <header className="bg-white border-b border-emerald-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 font-bold text-emerald-950"><Sparkles className="w-7 h-7 text-emerald-700" /> Smoky Mountain Pooper Scoopers</Link>
