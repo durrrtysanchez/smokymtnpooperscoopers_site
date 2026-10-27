@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Check, ClipboardCheck, Dog, Home, MapPin, Phone, ShieldCheck, Sparkles, Trash2, Users, Wrench } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import SEO from '../components/SEO';
 
 const commercialServices = [
   { icon: Building2, title: 'Apartment Communities', text: 'Recurring pet waste cleanup designed for multi-family properties, common areas and dog-walk routes.' },
@@ -13,6 +14,13 @@ const commercialServices = [
 ];
 
 const Commercial = () => (
+  <>
+    <SEO
+      title="Commercial Pet Waste Removal Knoxville TN | Smoky Mountain"
+      description="Commercial pet waste removal in Knoxville and East Tennessee for apartments, HOAs, property managers, dog parks, and shared pet areas. Request a custom service plan."
+      path="/commercial"
+      type="website"
+    />
   <div className="min-h-screen bg-white text-slate-900">
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-emerald-100 shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between gap-4">
