@@ -4,7 +4,7 @@ import { Button } from '../components/ui/button';
 import SEO from '../components/SEO';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
-import { Phone, Check, Star, Clock, ShieldCheck, MapPin, Sparkles, ArrowRight, Building2, Dog } from 'lucide-react';
+import { Phone, Check, Clock, ShieldCheck, MapPin, Sparkles, ArrowRight, Building2, Dog } from 'lucide-react';
 
 const services = [
   { title: 'Weekly Poop Scooping', text: 'Keep your yard consistently clean with dependable recurring service.', price: '$14.99/week', icon: Clock },
@@ -141,7 +141,7 @@ const Landing = () => (
 
       <section className="py-16 bg-emerald-900 text-white">
         <div className="container mx-auto px-4 text-center max-w-3xl">
-          <div className="flex justify-center gap-1 mb-4">{[1,2,3,4,5].map(i => <Star key={i} className="w-6 h-6 fill-lime-400 text-lime-400" />)}</div>
+          <div className="flex flex-wrap justify-center gap-3 mb-4 text-sm font-bold text-lime-300"><span>Locally operated</span><span>•</span><span>Recurring service</span><span>•</span><span>Fast quote requests</span></div>
           <h2 className="text-3xl md:text-4xl font-extrabold">Let's get your yard back under control.</h2>
           <p className="mt-4 text-emerald-100 text-lg">Serving Knoxville and the surrounding East Tennessee area.</p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4"><Link to="/quote"><Button size="lg" className="bg-lime-400 hover:bg-lime-300 text-emerald-950 font-extrabold px-8">Get a Free Quote</Button></Link><a href="tel:865-343-1142"><Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-emerald-950 px-8"><Phone className="w-5 h-5 mr-2" />865-343-1142</Button></a></div>
