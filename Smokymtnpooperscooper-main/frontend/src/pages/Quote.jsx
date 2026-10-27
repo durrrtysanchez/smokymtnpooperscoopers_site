@@ -48,6 +48,8 @@ const Quote = () => {
       const result = await response.json();
       if (result.success === false) throw new Error(result.message || 'The quote could not be submitted.');
 
+      window.gtag?.('event', 'generate_lead', { method: 'quote_form', service: formData.service });
+      window.posthog?.capture?.('quote_submitted', { service: formData.service, property_type: formData.propertyType, frequency: formData.frequency });
       setSubmitted(true);
     } catch (submissionError) {
       setError('We could not submit the quote right now. Please call 865-343-1142 or email smokymtnpooperscoopers@protonmail.com.');
