@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
+import SEO from '../components/SEO';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { Phone, Check, Star, Clock, ShieldCheck, MapPin, Sparkles, ArrowRight, Building2, Dog } from 'lucide-react';
@@ -21,6 +22,12 @@ const faqs = [
 ];
 
 const Landing = () => (
+  <>
+    <SEO
+      title="Pet Waste Removal Knoxville TN | Smoky Mountain Pooper Scoopers"
+      description="Professional pet waste removal in Knoxville and East Tennessee. Weekly service starts at $14.99, plus one-time cleanups and commercial pet waste service."
+      path="/"
+    />
   <div className="landing-page bg-white text-emerald-950">
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-emerald-100 shadow-sm">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
@@ -44,7 +51,7 @@ const Landing = () => (
     </header>
 
     <main>
-      <section className="relative min-h-[640px] flex items-center overflow-hidden">
+      <section className="relative min-h-[640px" flex items-center overflow-hidden">
         <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Happy dog enjoying a clean backyard in East Tennessee" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/95 via-emerald-900/85 to-emerald-800/65" />
         <div className="container mx-auto px-4 relative z-10 py-20">
@@ -83,7 +90,7 @@ const Landing = () => (
             {services.map(({ title, text, price, icon: Icon }) => (
               <Card key={title} className="border-2 border-emerald-100 hover:border-emerald-300 hover:shadow-xl transition-all">
                 <CardHeader><Icon className="w-10 h-10 text-emerald-700 mb-2" /><CardTitle className="text-xl text-emerald-950">{title}</CardTitle></CardHeader>
-                <CardContent><p className="text-emerald-700 min-h-[72px]">{text}</p><p className="font-extrabold text-2xl text-emerald-800 mt-5">{price}</p><Link to={title.includes('Commercial') || title.includes('Station') ? '/commercial' : '/quote'}><Button className="w-full mt-5 bg-emerald-700 hover:bg-emerald-800">Get Started</Button></Link></CardContent>
+                <CardContent><p className="text-emerald-700 min-h-[72px]">{text}</p><p className="font-extrabold text-2xl text-emerald-800 mt-5">{price}</p><Link to={title.includes('Commercial') ? '/commercial' : title.includes('Station') ? '/pet-waste-station-service' : title.includes('One-Time') ? '/one-time-yard-cleanup' : '/weekly-pooper-scooper-service'}><Button className="w-full mt-5 bg-emerald-700 hover:bg-emerald-800">Get Started</Button></Link></CardContent>
               </Card>
             ))}
           </div>
@@ -145,10 +152,10 @@ const Landing = () => (
     <footer className="bg-emerald-950 text-emerald-100 py-10">
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between gap-6">
         <div><div className="text-xl font-extrabold text-white">Smoky Mountain Pooper Scoopers</div><p className="mt-2">Pet waste removal in Knoxville & East Tennessee.</p></div>
-        <div className="text-left md:text-right"><a href="tel:865-343-1142" className="block hover:text-lime-300">865-343-1142</a><a href="mailto:smokymtnpooperscoopers@protonmail.com" className="block hover:text-lime-300 break-all">smokymtnpooperscoopers@protonmail.com</a><div className="mt-3 flex md:justify-end gap-4"><Link to="/quote" className="hover:text-lime-300">Get a Quote</Link><Link to="/commercial" className="hover:text-lime-300">Commercial</Link></div></div>
+        <div className="text-left md:text-right"><a href="tel:865-343-1142" className="block hover:text-lime-300">865-343-1142</a><a href="mailto:smokymtnpooperscoopers@protonmail.com" className="block hover:text-lime-300 break-all">smokymtnpooperscoopers@protonmail.com</a><div className="mt-3 flex md:justify-end gap-4"><Link to="/weekly-pooper-scooper-service" className="hover:text-lime-300">Weekly Service</Link><Link to="/one-time-yard-cleanup" className="hover:text-lime-300">One-Time Cleanup</Link><Link to="/pet-waste-station-service" className="hover:text-lime-300">Waste Stations</Link><Link to="/quote" className="hover:text-lime-300">Get a Quote</Link><Link to="/commercial" className="hover:text-lime-300">Commercial</Link></div></div>
       </div>
     </footer>
   </div>
-);
+  </>\n);
 
 export default Landing;
