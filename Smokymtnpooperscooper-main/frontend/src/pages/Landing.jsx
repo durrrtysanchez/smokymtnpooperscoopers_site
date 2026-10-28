@@ -51,7 +51,7 @@ const Landing = () => (
     </header>
 
     <main>
-      <section className="relative min-h-[640px" flex items-center overflow-hidden">
+      <section className="relative min-h-[640px] flex items-center overflow-hidden"">
         <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Happy dog enjoying a clean backyard in East Tennessee" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/95 via-emerald-900/85 to-emerald-800/65" />
         <div className="container mx-auto px-4 relative z-10 py-20">
