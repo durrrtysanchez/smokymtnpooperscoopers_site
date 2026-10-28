@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import SEO from '../components/SEO';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { LogOut, User, Mail, Calendar, Sparkles } from 'lucide-react';
@@ -15,7 +16,8 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-lime-50">
+    <SEO title="Customer Dashboard | Smoky Mountain Pooper Scoopers" description="Private customer area." path="/dashboard" noindex />
+        <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-lime-50">
       {/* Header */}
       <header className="bg-white border-b border-emerald-100 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
