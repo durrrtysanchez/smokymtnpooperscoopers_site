@@ -51,7 +51,7 @@ const SEO = ({ title, description, path = '/', image = null, type = 'website', s
       '@id': `${SITE_URL}/#business`,
       name: 'Smoky Mountain Pooper Scoopers',
       url: SITE_URL,
-      telephone: '+1-865-343-1142',
+      telephone: '+1-865-601-2002',
       email: 'smokymtnpooperscoopers@protonmail.com',
       priceRange: '$',
       description: 'Pet waste removal, recurring poop scooping, one-time yard cleanups, and commercial pet waste service in Knoxville and East Tennessee.',
