@@ -22,7 +22,7 @@ const upsertCanonical = (href) => {
   node.setAttribute('href', href);
 };
 
-const SEO = ({ title, description, path = '/', image = null, type = 'website', service = null }) => {
+const SEO = ({ title, description, path = '/', image = null, type = 'website', service = null, noindex = false }) => {
   useEffect(() => {
     const canonicalUrl = `${SITE_URL}${path === '/' ? '/' : path}`;
     document.title = title;
@@ -34,6 +34,7 @@ const SEO = ({ title, description, path = '/', image = null, type = 'website', s
     upsertMeta('name', 'twitter:card', 'summary_large_image');
     upsertMeta('name', 'twitter:title', title);
     upsertMeta('name', 'twitter:description', description);
+    upsertMeta('name', 'robots', noindex ? 'noindex, nofollow' : 'index, follow');
     upsertCanonical(canonicalUrl);
 
     if (image) {
@@ -84,7 +85,7 @@ const SEO = ({ title, description, path = '/', image = null, type = 'website', s
       const current = document.getElementById(id);
       if (current) current.remove();
     };
-  }, [title, description, path, image, type, service]);
+  }, [title, description, path, image, type, service, noindex]);
 
   return null;
 };
