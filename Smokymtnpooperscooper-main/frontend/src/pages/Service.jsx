@@ -72,7 +72,24 @@ const SERVICE_DATA = {
 
 export default function Service() {
   const { serviceSlug } = useParams();
-  const data = SERVICE_DATA[serviceSlug] || SERVICE_DATA['weekly-pooper-scooper-service'];
+  const data = SERVICE_DATA[serviceSlug];
+
+  if (!data) {
+    return (
+      <div className="min-h-screen bg-white text-emerald-950 flex items-center justify-center px-4">
+        <SEO title="Page Not Found | Smoky Mountain Pooper Scoopers" description="The page you requested could not be found. View our pet waste removal services in Knoxville and East Tennessee." path={`/${serviceSlug || ''}`} noindex />
+        <main className="max-w-xl text-center py-16">
+          <p className="text-emerald-700 font-black uppercase tracking-widest">Page not found</p>
+          <h1 className="text-4xl font-black mt-3">That service page doesn’t exist.</h1>
+          <p className="text-slate-600 mt-4">Explore our pet waste removal services or request a quote for your property.</p>
+          <div className="mt-7 flex flex-col sm:flex-row justify-center gap-3">
+            <Link to="/" className="inline-flex justify-center rounded-md bg-emerald-700 px-5 py-3 font-bold text-white">Visit Homepage</Link>
+            <Link to="/quote" className="inline-flex justify-center rounded-md border border-emerald-700 px-5 py-3 font-bold text-emerald-800">Request a Quote</Link>
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white text-emerald-950">
@@ -89,7 +106,7 @@ export default function Service() {
             <Sparkles className="w-7 h-7 text-emerald-700" />
             Smoky Mountain Pooper Scoopers
           </Link>
-          <a href="tel:865-343-1142" className="hidden sm:block font-bold text-emerald-800">865-343-1142</a>
+          <a href="tel:865-601-2002" className="hidden sm:block font-bold text-emerald-800">865-601-2002</a>
           <Link to="/quote"><Button className="bg-emerald-700 hover:bg-emerald-800">Get a Quote</Button></Link>
         </div>
       </header>
