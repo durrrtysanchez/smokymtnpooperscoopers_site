@@ -7,10 +7,10 @@ import { LogIn, Sparkles } from 'lucide-react';
 
 const Login = () => {
   const { login } = useAuth();
-
   return (
-    <SEO title="Login | Smoky Mountain Pooper Scoopers" description="Private customer area." path="/login" noindex />
-        <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-lime-50 flex items-center justify-center p-4">
+    <>
+      <SEO title="Login | Smoky Mountain Pooper Scoopers" description="Private customer area." path="/login" noindex />
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-lime-50 flex items-center justify-center p-4">
       <Card className="w-full max-w-md border-2 border-emerald-200 shadow-2xl">
         <CardHeader className="text-center space-y-4">
           <div className="flex justify-center">
@@ -34,6 +34,7 @@ const Login = () => {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 };
 
