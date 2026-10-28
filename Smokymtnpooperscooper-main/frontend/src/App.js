@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import Contacts from "./pages/Contacts";
 import AuthCallback from "./pages/AuthCallback";
 import Service from "./pages/Service";
+import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { Toaster } from "./components/ui/sonner";
 
@@ -25,6 +26,7 @@ function AppRouter() {
       <Route path="/quote" element={<Quote />} />
       <Route path="/commercial" element={<Commercial />} />
       <Route path="/:serviceSlug" element={<Service />} />
+      <Route path="*" element={<NotFound />} />
       <Route path="/login" element={<Login />} />
       <Route
         path="/dashboard"
