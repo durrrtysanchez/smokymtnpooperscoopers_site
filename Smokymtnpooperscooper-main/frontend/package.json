@@ -62,7 +62,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "prebuild": "node -e \"const fs=require('fs'); const p='src/pages/Landing.jsx'; let s=fs.readFileSync(p,'utf8'); s=s.replace('overflow-hidden\\\"\\\"','overflow-hidden\\\"'); fs.writeFileSync(p,s);\"",
+    "prebuild": "node -e \"const fs=require('fs'); const p='src/pages/Landing.jsx'; let s=fs.readFileSync(p,'utf8'); s=s.replace('overflow-hidden\\\"\\\"','overflow-hidden\\\"'); fs.writeFileSync(p,s);\" && node scripts/update-phone.js",
     "build": "craco build",
     "test": "craco test"
   },
@@ -109,7 +109,7 @@
     "resolve-url-loader": "5.0.0",
     "**/resolve-url-loader/postcss": "8.5.10",
     "**/axios/form-data": "4.0.4",
-    "**/jsdom/form-data": "3.0.4",
+    "**/jsdom/form-data": "3.0.0",
     "**/postcss-svgo/svgo": "2.8.1",
     "**/webpack-dev-server/ws": "8.20.1",
     "**/postcss-load-config/yaml": "2.8.3",
