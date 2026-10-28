@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /login
+Disallow: /dashboard
+Disallow: /contacts
 
 Sitemap: https://smokymtnpooperscooper.com/sitemap.xml
