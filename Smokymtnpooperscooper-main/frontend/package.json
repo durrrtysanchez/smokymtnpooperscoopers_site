@@ -62,20 +62,13 @@
   },
   "scripts": {
     "start": "craco start",
+    "prebuild": "node -e \"const fs=require('fs'); const p='src/pages/Landing.jsx'; let s=fs.readFileSync(p,'utf8'); s=s.replace('overflow-hidden\\\"\\\"','overflow-hidden\\\"'); fs.writeFileSync(p,s);\"",
     "build": "craco build",
     "test": "craco test"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
