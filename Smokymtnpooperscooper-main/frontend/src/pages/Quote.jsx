@@ -52,7 +52,7 @@ const Quote = () => {
       window.posthog?.capture?.('quote_submitted', { service: formData.service, property_type: formData.propertyType, frequency: formData.frequency });
       setSubmitted(true);
     } catch (submissionError) {
-      setError('We could not submit the quote right now. Please call 865-343-1142 or email smokymtnpooperscoopers@protonmail.com.');
+      setError('We could not submit the quote right now. Please call 865-601-2002 or email smokymtnpooperscoopers@protonmail.com.');
       console.error(submissionError);
     } finally {
       setSubmitting(false);
@@ -66,7 +66,7 @@ const Quote = () => {
           <div className="mx-auto w-16 h-16 rounded-full bg-lime-100 flex items-center justify-center mb-6"><Check className="w-8 h-8 text-emerald-700" /></div>
           <h1 className="text-3xl md:text-4xl font-bold text-emerald-950">Your quote request is ready.</h1>
           <p className="mt-4 text-emerald-700">Your quote request was submitted successfully. We will follow up using the contact information you provided.</p>
-          <a href="tel:865-343-1142" className="inline-flex items-center mt-8 px-6 py-3 rounded-xl bg-emerald-700 text-white font-bold hover:bg-emerald-800"><Phone className="w-5 h-5 mr-2" /> Call 865-343-1142</a>
+          <a href="tel:865-601-2002" className="inline-flex items-center mt-8 px-6 py-3 rounded-xl bg-emerald-700 text-white font-bold hover:bg-emerald-800"><Phone className="w-5 h-5 mr-2" /> Call 865-601-2002</a>
           <div className="mt-6"><Link to="/" className="text-emerald-700 font-semibold hover:underline">Return to home</Link></div>
         </div>
       </div>
@@ -79,7 +79,7 @@ const Quote = () => {
       <header className="bg-white border-b border-emerald-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 font-bold text-emerald-950"><Sparkles className="w-7 h-7 text-emerald-700" /> Smoky Mountain Pooper Scoopers</Link>
-          <a href="tel:865-343-1142" className="hidden sm:flex items-center gap-2 text-emerald-800 font-bold"><Phone className="w-4 h-4" /> 865-343-1142</a>
+          <a href="tel:865-601-2002" className="hidden sm:flex items-center gap-2 text-emerald-800 font-bold"><Phone className="w-4 h-4" /> 865-601-2002</a>
         </div>
       </header>
 
@@ -117,7 +117,7 @@ const Quote = () => {
 
             <aside className="space-y-5">
               <div className="bg-emerald-950 text-white rounded-3xl p-7 shadow-xl"><p className="text-lime-300 font-black uppercase tracking-wide">Weekly special</p><div className="text-5xl font-black mt-2">$14.99</div><p className="text-emerald-100 mt-2">Weekly service offer*</p><div className="border-t border-emerald-800 my-5" /><p className="font-bold">First cleaning FREE</p><p className="text-sm text-emerald-200 mt-1">when you sign up for recurring weekly service.</p><p className="text-xs text-emerald-300 mt-4">*Final pricing can vary by property size, pet count and service requirements.</p></div>
-              <div className="bg-white rounded-3xl border border-emerald-100 p-7 shadow-sm"><h3 className="font-bold text-xl text-emerald-950">Prefer to talk?</h3><p className="text-slate-600 mt-2">Call or email us directly and we'll help you figure out the right service.</p><a href="tel:865-343-1142" className="flex items-center gap-3 mt-5 text-emerald-800 font-bold"><Phone className="w-5 h-5" /> 865-343-1142</a><a href="mailto:smokymtnpooperscoopers@protonmail.com" className="flex items-start gap-3 mt-4 text-emerald-800 font-semibold break-all"><Mail className="w-5 h-5 flex-shrink-0 mt-1" /> smokymtnpooperscoopers@protonmail.com</a><div className="flex items-start gap-3 mt-4 text-slate-600"><MapPin className="w-5 h-5 flex-shrink-0 mt-1" /> Knoxville & East Tennessee</div></div>
+              <div className="bg-white rounded-3xl border border-emerald-100 p-7 shadow-sm"><h3 className="font-bold text-xl text-emerald-950">Prefer to talk?</h3><p className="text-slate-600 mt-2">Call or email us directly and we'll help you figure out the right service.</p><a href="tel:865-601-2002" className="flex items-center gap-3 mt-5 text-emerald-800 font-bold"><Phone className="w-5 h-5" /> 865-601-2002</a><a href="mailto:smokymtnpooperscoopers@protonmail.com" className="flex items-start gap-3 mt-4 text-emerald-800 font-semibold break-all"><Mail className="w-5 h-5 flex-shrink-0 mt-1" /> smokymtnpooperscoopers@protonmail.com</a><div className="flex items-start gap-3 mt-4 text-slate-600"><MapPin className="w-5 h-5 flex-shrink-0 mt-1" /> Knoxville & East Tennessee</div></div>
             </aside>
           </div>
         </section>
