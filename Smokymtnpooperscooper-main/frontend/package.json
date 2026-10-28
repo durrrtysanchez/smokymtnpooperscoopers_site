@@ -6,7 +6,7 @@
     "@hookform/resolvers": "5.0.1",
     "@radix-ui/react-accordion": "1.2.8",
     "@radix-ui/react-alert-dialog": "1.1.11",
-    "@radix-ui/react-aspect-ratio": "1.2.2",
+    "@radix-ui/react-aspect-ratio": "1.2.0",
     "@radix-ui/react-avatar": "1.2.0",
     "@radix-ui/react-checkbox": "1.2.3",
     "@radix-ui/react-collapsible": "1.1.12",
@@ -62,13 +62,20 @@
   },
   "scripts": {
     "start": "craco start",
-    "prebuild": "node -e \"const fs=require('fs');const p='src/pages/Landing.jsx';let s=fs.readFileSync(p,'utf8');s=s.replace('className=\\\"relative min-h-[640px\\\" flex items-center overflow-hidden','className=\\\"relative min-h-[640px] flex items-center overflow-hidden\\\"');fs.writeFileSync(p,s)\"",
     "build": "craco build",
     "test": "craco test"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
-    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
