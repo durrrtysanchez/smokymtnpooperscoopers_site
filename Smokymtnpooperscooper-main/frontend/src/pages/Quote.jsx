@@ -111,8 +111,9 @@ const Quote = () => {
                 <label className="font-semibold text-slate-700">What do you need?<select name="service" value={formData.service} onChange={handleChange} className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 font-normal bg-white"><option>Recurring yard cleanup</option><option>Initial / deep cleanup</option><option>Pet waste station service</option><option>Commercial property cleanup</option><option>Multiple properties</option></select></label>
               </div>
               <label className="block mt-5 font-semibold text-slate-700">Anything else we should know?<textarea name="message" value={formData.message} onChange={handleChange} rows="5" className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 font-normal outline-none focus:ring-2 focus:ring-emerald-600" placeholder="Gate instructions, yard size, number of stations, special requests, etc." /></label>
-              <Button type="submit" size="lg" className="w-full mt-6 bg-lime-500 hover:bg-lime-600 text-emerald-950 font-black text-lg py-6"><Send className="w-5 h-5 mr-2" /> Get My Free Quote</Button>
-              <p className="text-xs text-slate-500 text-center mt-3">Submitting opens your email app with the quote request prepared for us.</p>
+              {error && <p role="alert" className="mt-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800">{error}</p>}
+              <Button type="submit" disabled={submitting} size="lg" className="w-full mt-6 bg-lime-500 hover:bg-lime-600 text-emerald-950 font-black text-lg py-6"><Send className="w-5 h-5 mr-2" /> {submitting ? "Sending Request..." : "Get My Free Quote"}</Button>
+              <p className="text-xs text-slate-500 text-center mt-3">Your request is sent through our online quote form. If it cannot be submitted, call or email us using the contact details on this page.</p>
             </form>
 
             <aside className="space-y-5">
