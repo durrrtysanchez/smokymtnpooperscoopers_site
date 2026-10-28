@@ -119,7 +119,7 @@ export default function Service() {
             <p className="text-xl text-emerald-100 leading-relaxed mt-6 max-w-3xl">{data.intro}</p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link to="/quote"><Button size="lg" className="bg-lime-400 hover:bg-lime-300 text-emerald-950 font-extrabold">Get My Free Quote <ArrowRight className="w-5 h-5 ml-2" /></Button></Link>
-              <a href="tel:865-343-1142"><Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-emerald-950"><Phone className="w-5 h-5 mr-2" /> Call Us</Button></a>
+              <a href="tel:865-601-2002"><Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-emerald-950"><Phone className="w-5 h-5 mr-2" /> Call Us</Button></a>
             </div>
           </div>
         </section>
